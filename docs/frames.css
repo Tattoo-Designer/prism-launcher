@@ -13,9 +13,9 @@
 .mock .mglass{position:absolute;background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 8px 22px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
 .mock .top{left:9%;right:2.5%;top:9%;height:11%;border-radius:99px;display:flex;justify-content:space-between;align-items:center;padding:0 2.5%;font-weight:700;font-size:calc(2*var(--u))}
 .mock .dk{left:1.6%;top:24%;bottom:16%;width:5.8%;border-radius:99px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;font-size:calc(2*var(--u))}
-.mock .grid{position:absolute;left:9%;right:2.5%;top:26%;bottom:15%;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:3%}
-.mock .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4%;font-size:calc(1.5*var(--u))}
-.mock .tile .ic{position:relative;width:46%;aspect-ratio:1;border-radius:22%;display:grid;place-items:center;font-weight:800;font-size:calc(1.9*var(--u));overflow:hidden}
+.mock .grid{position:absolute;left:9%;right:2.5%;top:23%;bottom:21%;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:3%}
+.mock .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4%;font-size:calc(1.4*var(--u));white-space:nowrap}
+.mock .tile .ic{position:relative;width:42%;aspect-ratio:1;border-radius:22%;display:grid;place-items:center;font-weight:800;font-size:calc(1.9*var(--u));overflow:hidden}
 .mock .tile .ic img{width:80%;height:80%;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.05)}
 .mock .seg{left:50%;transform:translateX(-50%);bottom:3.5%;display:flex;padding:1%;border-radius:99px;font-size:calc(1.6*var(--u));gap:2px}.mock .seg span{padding:.7em 1.6em;border-radius:99px}.mock .seg .on{background:rgba(255,255,255,.3)}
 .mock .st{position:absolute;inset:0 0 auto;height:5.5%;background:rgba(6,7,16,.55);font-size:calc(1.4*var(--u));display:flex;justify-content:space-between;padding:.4% 2%}
