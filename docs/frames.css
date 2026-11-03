@@ -1,0 +1,43 @@
+/* Device frames. .frame-handheld = 16:9 handheld; .frame-phone = 9:19.5 phone. Put a .screen inside. */
+.frame-handheld{position:relative;width:min(760px,100%);aspect-ratio:16/9;border-radius:34px;border:9px solid #14172e;overflow:hidden;margin-inline:auto;box-shadow:0 0 0 2px #2a2f58,0 50px 100px rgba(0,0,0,.6);background:#0c0d1a}
+.frame-handheld::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);background:linear-gradient(115deg,rgba(255,255,255,.08),transparent 35%)}
+.frame-phone{position:relative;width:min(230px,28vw);min-width:170px;aspect-ratio:9/19.5;border-radius:38px;border:7px solid #15182f;overflow:hidden;background:#0b0c1a;box-shadow:0 0 0 2px #2b3058,0 40px 80px rgba(0,0,0,.6);flex:none}
+.frame-phone::before{content:"";position:absolute;top:10px;left:50%;width:12px;height:12px;border-radius:50%;background:#000;transform:translateX(-50%);z-index:3;box-shadow:inset 0 0 0 2px #1b1f3a}
+.frame-phone::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.07),transparent 35%);z-index:3}
+.frame-phone.sm{width:min(190px,22vw);min-width:150px}
+/* ---- CSS mocks shown while no media exists ---- */
+.mock{--u:min(7.6px,.78vw);font-family:Inter,sans-serif;color:#e8ecff}
+.mock .mbg{position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,#2b2a5a,transparent 60%),#0c0d1a;transition:background .6s}
+.mock .mbg.aurora{background:linear-gradient(135deg,#ff5fa2,#7a5cff,#2ec4ff,#2effb0,#ffd45f,#ff5fa2);background-size:400% 400%;filter:brightness(.55)}
+.mock .mbg.rose{background:linear-gradient(160deg,#3a1030,#7a2a52 60%,#c4627a)}.mock .mbg.mint{background:linear-gradient(160deg,#07302f,#0f6b66 60%,#46c7a8)}
+.mock .mglass{position:absolute;background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 8px 22px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
+.mock .top{left:9%;right:2.5%;top:9%;height:11%;border-radius:99px;display:flex;justify-content:space-between;align-items:center;padding:0 2.5%;font-weight:700;font-size:calc(2*var(--u))}
+.mock .dk{left:1.6%;top:24%;bottom:16%;width:5.8%;border-radius:99px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;font-size:calc(2*var(--u))}
+.mock .grid{position:absolute;left:9%;right:2.5%;top:26%;bottom:15%;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:3%}
+.mock .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4%;font-size:calc(1.5*var(--u))}
+.mock .tile .ic{position:relative;width:46%;aspect-ratio:1;border-radius:22%;display:grid;place-items:center;font-weight:800;font-size:calc(1.9*var(--u));overflow:hidden}
+.mock .tile .ic img{width:80%;height:80%;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.05)}
+.mock .seg{left:50%;transform:translateX(-50%);bottom:3.5%;display:flex;padding:1%;border-radius:99px;font-size:calc(1.6*var(--u));gap:2px}.mock .seg span{padding:.7em 1.6em;border-radius:99px}.mock .seg .on{background:rgba(255,255,255,.3)}
+.mock .st{position:absolute;inset:0 0 auto;height:5.5%;background:rgba(6,7,16,.55);font-size:calc(1.4*var(--u));display:flex;justify-content:space-between;padding:.4% 2%}
+/* phone mock */
+.pm{position:absolute;inset:0;display:flex;flex-direction:column;padding:34px 12px 12px;gap:8px;font-size:.78rem}
+.pm .pill{height:34px;border-radius:17px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-weight:700}
+.pm .vid{height:100px;border-radius:16px;background:linear-gradient(135deg,#7a5cff,#ff5fa2);position:relative;overflow:hidden}
+.pm .vid::after{content:"";position:absolute;left:50%;top:50%;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);transform:translate(-50%,-50%);clip-path:polygon(35% 25%,80% 50%,35% 75%)}
+.pm .row{height:48px;border-radius:14px;display:flex;gap:10px;align-items:center;padding:0 10px}.pm .row b{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.25);flex:none}.pm .row i{height:6px;border-radius:4px;background:rgba(255,255,255,.35);flex:1;box-shadow:0 12px 0 -1px rgba(255,255,255,.18)}
+.pm .art{margin:8px 12px 10px;aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,#2ec4ff,#7a5cff 55%,#ff5fa2);box-shadow:0 20px 40px rgba(0,0,0,.5);position:relative;overflow:hidden}
+.pm .art .eq{position:absolute;left:0;right:0;bottom:0;height:40%;display:flex;align-items:flex-end;justify-content:center;gap:5px;padding-bottom:12px}
+.pm .art .eq i{width:5px;border-radius:3px;background:rgba(255,255,255,.75);animation:eq 1.1s ease-in-out infinite alternate}
+.pm .art .eq i:nth-child(2){animation-delay:-.2s}.pm .art .eq i:nth-child(3){animation-delay:-.5s}.pm .art .eq i:nth-child(4){animation-delay:-.1s}.pm .art .eq i:nth-child(5){animation-delay:-.7s}.pm .art .eq i:nth-child(6){animation-delay:-.35s}
+@keyframes eq{from{height:18%}to{height:85%}}
+.pm .bar{height:5px;border-radius:3px;background:rgba(255,255,255,.2);margin:4px 14px;overflow:hidden}.pm .bar i{display:block;width:40%;height:100%;border-radius:3px;background:#fff;animation:prog 18s linear infinite}
+@keyframes prog{from{width:5%}to{width:95%}}
+.pm .ctl{height:46px;border-radius:23px;margin:10px 18px 0;display:flex;align-items:center;justify-content:space-around;font-size:1rem}
+.pm .sq{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pm .sq div{aspect-ratio:1;border-radius:14px}
+.pm .dock{margin-top:auto;height:44px;border-radius:22px;display:flex;align-items:center;justify-content:space-around;font-size:.95rem}
+.pm .title{font-weight:700;font-size:.9rem;margin:0 14px}.pm .sub{color:#c3cbf0;font-size:.75rem;margin:0 14px 6px}
+/* video vs music morph */
+.pm.music .vid{height:0;margin:0;opacity:0}.pm.music .row{opacity:0;height:0;margin:0}
+.pm.music .sq{opacity:1;max-height:400px}.pm.video .sq{opacity:0;max-height:0;overflow:hidden}
+.pm .vid,.pm .row,.pm .sq{transition:all .55s var(--ease)}
+@media(prefers-reduced-motion:reduce){.pm .art .eq i,.pm .bar i{animation:none}}
