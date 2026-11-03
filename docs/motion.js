@@ -12,7 +12,7 @@
     el.addEventListener('pointerleave',function(){el.style.transform=''})})}
   // media fallback: if an image/video fails, show the CSS mock
   document.querySelectorAll('.screen').forEach(function(s){
-    var m=s.querySelectorAll('img,video');if(!m.length){s.classList.add('nomedia');return}
+    var m=Array.prototype.filter.call(s.querySelectorAll('img,video'),function(el){return !el.closest('.mock')});if(!m.length){s.classList.add('nomedia');return}
     var fails=0;m.forEach(function(el){el.addEventListener('error',function(){if(++fails>=m.length)s.classList.add('nomedia')});
       if(el.tagName==='IMG'&&el.complete&&el.naturalWidth===0){if(++fails>=m.length)s.classList.add('nomedia')}
       if(el.tagName==='VIDEO'){var chk=function(){if(el.error||el.networkState===3){if(++fails>=m.length)s.classList.add('nomedia')}};chk();setTimeout(chk,1500)}})});
